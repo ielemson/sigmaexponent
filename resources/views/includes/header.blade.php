@@ -38,7 +38,7 @@
                             </div>
                             <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
-                                    <li class="active"><a href="{{ route('home') }}">Home</a>
+                                    <li class="active"><a href="{{ url("/") }}">Home</a>
                                      
                                     </li>
                                     <li class=""><a href="{{ route('about') }}">About Us</a>
