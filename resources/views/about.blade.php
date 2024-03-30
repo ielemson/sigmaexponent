@@ -2,7 +2,7 @@
 
 @section('content')
      <!-- breadcrumb-area -->
-   @include("includes.breadcrumb",["header_1"=>"About",'header_2'=>"About Us"])
+   @include("includes.breadcrumb",["header_1"=>"About",'header_2'=>"About Us","img"=>"assets/img/bg/about.jpg"])
     <!-- breadcrumb-area-end -->
 
     <!-- about-area -->

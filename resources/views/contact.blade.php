@@ -2,27 +2,7 @@
 
 @section('content')
     <!-- breadcrumb-area -->
-    <section class="breadcrumb-area breadcrumb-bg" data-background="{{ asset("assets/img/bg/breadcrumb_bg.jpg ")}}">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-content">
-                        <h2 class="title">Contact Us</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ url("/") }}">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="breadcrumb-shape-wrap">
-            <img src="{{ asset("assets/img/images/breadcrumb_shape01.png") }}" alt="">
-            <img src="{{ asset("assets/img/images/breadcrumb_shape02.png") }}" alt="">
-        </div>
-    </section>
+    @include("includes.breadcrumb",["header_1"=>"Contact",'header_2'=>"Contact Us","img"=>"assets/img/bg/contact.jpg"])
     <!-- breadcrumb-area-end -->
 
     <!-- contact-area -->
@@ -31,7 +11,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="inner-contact-img">
-                        <img src="{{ asset("assets/img/images/contact_img.jpg") }}" alt="">
+                        <img src="{{ asset("assets/img/banner/consult-1.jpg") }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
