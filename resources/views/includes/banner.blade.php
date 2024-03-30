@@ -7,15 +7,15 @@
                  <div class="col-lg-7">
                      <div class="header-top-left">
                          <ul class="list-wrap">
-                             <li><i class="flaticon-location"></i>256 Avenue, Mark Street, Newyork City</li>
-                             <li><i class="flaticon-mail"></i><a href="mailto:gerow@gmail.com">gerow@gmail.com</a></li>
+                             <li><i class="flaticon-location"></i>P.O Box 441564, Houston Texas, 77244</li>
+                             <li><i class="flaticon-mail"></i><a href="mailto:info@sigmaexponent.Com">Info@Sigmaexponent.Com</a></li>
                          </ul>
                      </div>
                  </div>
                  <div class="col-lg-5">
                      <div class="header-top-right">
                          <div class="header-contact">
-                             <a href="tel:0123456789"><i class="flaticon-phone-call"></i>+123 8989 444</a>
+                             <a href="tel:+1 8324066596"><i class="flaticon-phone-call"></i>+1 832 406 6596</a>
                          </div>
                          <div class="header-social">
                              <ul class="list-wrap">
@@ -38,7 +38,7 @@
                      <div class="menu-wrap">
                          <nav class="menu-nav">
                              <div class="logo">
-                                 <a href="index.html"><img src="assets/img/logo/logo.png" alt="Logo"></a>
+                                 <a href="index.html"><img src="{{ asset("assets/img/logo/logo.png") }}" alt="Logo"></a>
                              </div>
                              <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
@@ -48,34 +48,32 @@
                                     <li class=""><a href="{{ route('about') }}">About Us</a>
                                        
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">Services</a>
+                                    <li class="menu-item-has-children"><a href="#">What We Do</a>
                                         <ul class="sub-menu">
                                           
-                                            <li class="menu-item-has-children"><a href="services-details.html">Services Details</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="services-details.html">Services Details One</a></li>
-                                                    <li><a href="services-details-2.html">Services Details Two</a></li>
-                                                    <li><a href="services-details-3.html">Services Details Three</a></li>
-                                                    <li><a href="services-details-4.html">Services Details Four</a></li>
-                                                    <li><a href="services-details-5.html">Services Details Five</a></li>
-                                                </ul>
-                                            </li>
+                                            @if (count($services) > 0)
+                                            @foreach ($services as $service)
+                                            <li><a href="{{ route("frontend.service",$service->slug) }}">
+                                              {{ $service->title }}
+                                              </a>
+                                          </li>
+                                         
+                                            @endforeach 
+                                         @endif
+                                           
                                            
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.html">Our Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
+                                    <li><a href="#">Blog</a>
+                                        
                                     </li>
-                                    <li><a href="{{ route('contact') }}">contacts</a></li>
+                                    <li><a href="{{ route('contact') }}">Contacts</a></li>
                                 </ul>
                              </div>
                              <div class="header-action d-none d-md-block">
                                  <ul class="list-wrap">
                                      <li class="header-search"><a href="#"><i class="flaticon-search"></i></a></li>
-                                     <li class="header-btn"><a href="contact.html" class="btn btn-two">Get a Quote</a></li>
+                                     <li class="header-btn"><a href="{{ route("contact") }}" class="btn btn-two">Contact Us</a></li>
                                  </ul>
                              </div>
                          </nav>
@@ -86,7 +84,7 @@
                          <nav class="menu-box">
                              <div class="close-btn"><i class="fas fa-times"></i></div>
                              <div class="nav-logo">
-                                 <a href="index.html"><img src="assets/img/logo/logo.png" alt="Logo"></a>
+                                 <a href="index.html"><img src="{{ asset("assets/img/logo/logo.png") }}" alt="Logo"></a>
                              </div>
                              <div class="mobile-search">
                                  <form action="#">
@@ -117,7 +115,7 @@
      </div>
 
      <!-- header-search -->
-     <div class="search-popup-wrap" tabindex="-1" role="dialog" aria-hidden="true">
+     {{-- <div class="search-popup-wrap" tabindex="-1" role="dialog" aria-hidden="true">
          <div class="search-close">
              <span><i class="fas fa-times"></i></span>
          </div>
@@ -136,7 +134,7 @@
                  </div>
              </div>
          </div>
-     </div>
+     </div> --}}
      <!-- header-search-end -->
 
  </header>

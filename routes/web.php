@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FrontendController@index')->name('welcome');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::get('/about', 'FrontendController@about')->name('about');
+Route::get('/our/service/{slug}', 'FrontendController@service')->name('frontend.service');
 
 
 Route::group(['middleware' => 'auth'], function() {
@@ -35,6 +36,11 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/profile', 'UserController@postProfile')->name('user.postProfile');
 
     Route::get('/password/change', 'UserController@getPassword')->name('userGetPassword');
+    Route::get('/service/index', 'HomeController@index_service')->name('services.index');
+    Route::get('/service/create', 'HomeController@create_service')->name('services.create');
+    Route::post('/service/store', 'HomeController@store_service')->name('services.store');
+    Route::get('/service/{id}', 'HomeController@edit_service')->name('service.edit');
+    Route::post('/service/update/{id}', 'HomeController@update_service')->name('service.update');
 
     Route::post('/password/change', 'UserController@postPassword')->name('userPostPassword');
 });

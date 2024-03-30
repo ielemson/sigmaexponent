@@ -6,10 +6,13 @@
                     <div class="col-lg-4 col-md-7">
                         <div class="footer-widget">
                             <div class="fw-logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href="{{ url("/") }}"><img src="{{ asset("assets/img/logo/logo.png") }}" alt="logo"></a>
                             </div>
                             <div class="footer-content">
-                                <p>When an unknown printer took a galley of type aawer awtnd scrambled it to make a type specimen book.</p>
+                                <p>
+                                    At Sigma Exponent LLC, we redeﬁne possibilities in the realm of investment and consulting. 
+
+                                </p>
                                 <div class="footer-info">
                                     <ul class="list-wrap">
                                         <li>
@@ -17,7 +20,7 @@
                                                 <i class="flaticon-phone-call"></i>
                                             </div>
                                             <div class="content">
-                                                <a href="tel:0123456789">+123 888 9999</a>
+                                                <a href="tel:+18324066596">+1 832 406 6596 </a>
                                             </div>
                                         </li>
                                         <li>
@@ -25,7 +28,7 @@
                                                 <i class="flaticon-clock"></i>
                                             </div>
                                             <div class="content">
-                                                <p>Mon – Sat: 8 am – 5 pm, <br> Sunday: <span>CLOSED</span></p>
+                                                <p>Mon – Sat: 8 am – 5 pm</p>
                                             </div>
                                         </li>
                                     </ul>
@@ -38,11 +41,11 @@
                             <h4 class="fw-title">Menu</h4>
                             <div class="footer-link">
                                 <ul class="list-wrap">
-                                    <li><a href="about.html">Company</a></li>
-                                    <li><a href="contact.html">Careers</a></li>
-                                    <li><a href="contact.html">Press media</a></li>
-                                    <li><a href="blog.html">Our Blog</a></li>
-                                    <li><a href="contact.html">Privacy Policy</a></li>
+                                    <li><a href="{{ route("about") }}">Company</a></li>
+                                    <li><a href="{{ route("contact") }}">Careers</a></li>
+                                    {{-- <li><a href="{{ route("about") }}">Press media</a></li> --}}
+                                    <li><a href="#">Our Blog</a></li>
+                                    {{-- <li><a href="contact.html">Privacy Policy</a></li> --}}
                                 </ul>
                             </div>
                         </div>
@@ -52,11 +55,11 @@
                             <h4 class="fw-title">Quick Links</h4>
                             <div class="footer-link">
                                 <ul class="list-wrap">
-                                    <li><a href="contact.html">How it’s Work</a></li>
-                                    <li><a href="contact.html">Partners</a></li>
-                                    <li><a href="contact.html">Testimonials</a></li>
-                                    <li><a href="contact.html">Case Studies</a></li>
-                                    <li><a href="contact.html">Pricing</a></li>
+                                    <li><a href="{{ route("contact") }}">How it’s Work</a></li>
+                                    <li><a href="{{ route("about") }}">Partners</a></li>
+                                    <li><a href="{{ route("contact") }}">Testimonials</a></li>
+                                    {{-- <li><a href="contact.html">Case Studies</a></li> --}}
+                                    {{-- <li><a href="contact.html">Pricing</a></li> --}}
                                 </ul>
                             </div>
                         </div>
@@ -74,9 +77,9 @@
                                     <ul class="list-wrap">
                                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                        {{-- <li><a href="#"><i class="fab fa-instagram"></i></a></li> --}}
+                                        {{-- <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li> --}}
+                                        {{-- <li><a href="#"><i class="fab fa-youtube"></i></a></li> --}}
                                     </ul>
                                 </div>
                             </div>
@@ -90,7 +93,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright-text-two text-center">
-                            <p>Copyright © gerow | All Right Reserved</p>
+                            <p>Copyright © SigmaExponent | All Right Reserved</p>
                         </div>
                     </div>
                 </div>
