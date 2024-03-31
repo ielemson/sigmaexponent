@@ -68,8 +68,7 @@ class FrontendController extends Controller
     public function clearWebsiteCache()
     {
         Artisan::call('cache:clear');
-        $services = Service::all();
-        return view('welcome',compact("services"));
+        return "Cache Cleared";
     }
    
 }
