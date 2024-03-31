@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Post;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -45,5 +47,18 @@ class FrontendController extends Controller
         $service = Service::where("slug",$slug)->first();
         $services = Service::all();
         return view('frontend_service',compact("service","services"));
+    }
+
+    public function posts(){
+        $blogs = Post::where("status",1)->paginate(12);
+        $services = Service::all();
+        return view("blogs",compact("blogs","services"));
+    }
+    public function post($slug){
+        $blog = Post::where("slug",$slug)->first();
+        $blogs = Post::where("status",1)->latest();
+        $categories = Category::where("status",1)->get();
+        $services = Service::all();
+        return view("blog",compact("blog","services",'blogs','categories'));
     }
 }

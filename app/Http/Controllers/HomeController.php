@@ -91,7 +91,7 @@ class HomeController extends Controller
                 $service->title = $request->title;
                 $service->status = $request->status;
                 $service->content = $request->content;
-                $service->slug = ($request->input('title'));
+                $service->slug = Str::slug($request->input('title'));
             
             if ($service->save()) {
                 return redirect()->back()->with('success', 'Service updated!');

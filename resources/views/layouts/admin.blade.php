@@ -8,6 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
+   <!-- Styles -->
+   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha512-znmTf4HNoF9U6mfB6KlhAShbRvbt4CvCaHoNV0gyssfToNQ/9A0eNdUbvsSwOIUoJdMjFG2ndSvr0Lo3ZpsTqQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -16,12 +19,10 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  
 </head>
-<body class="sidebar-mini" style="height: auto;">
-    <div class="wrapper" id="app">
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -56,142 +57,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="{{ route("home") }}" class="brand-link">
-                <img src="{{ asset('img/logo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
-            </a>
-
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{{ asset('img/avatar.jpg') }}" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">{{ auth()->user()->name }}</a>
-                    </div>
-                </div>
-
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chalkboard"></i>
-                                <p>
-                                    Dashboard
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-cogs"></i>
-                                <p>
-                                    Management
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                @can('create role')
-                                    <li class="nav-item">
-                                        <a href="{{ route('role.index') }}" class="nav-link">
-                                            <i class="fas fa-bomb nav-icon"></i>
-                                            <p>Roles</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('permission.index') }}" class="nav-link">
-                                            <i class="fas fa-bomb nav-icon"></i>
-                                            <p>Permissions</p>
-                                        </a>
-                                    </li>
-                                @endcan
-                                <li class="nav-item">
-                                    <a href="{{ route('user.index') }}" class="nav-link">
-                                        <i class="fas fa-users-cog nav-icon"></i>
-                                        <p>Users</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('user.profile') }}" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Profile
-                                </p>
-                            </a>
-                        </li>
-                        {{-- <li class="nav-item">
-                            <a href="#" class="nav-link">
-                            <i class="fas fa-bell nav-icon"></i>
-                            <p>Notifications</p>
-                            </a>
-                        </li> --}}
-
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link {{ request()->is('service/*') ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-cogs"></i>
-                                <p>
-                                    Services
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                @can('create service')
-                                    <li class="nav-item">
-                                        <a href="{{ route('services.create') }}" class="nav-link">
-                                            <i class="fas fa-bomb nav-icon"></i>
-                                            <p>Create</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{ route('services.index') }}" class="nav-link">
-                                            <i class="fas fa-bomb nav-icon"></i>
-                                            <p>View</p>
-                                        </a>
-                                    </li>
-                                @endcan
-                                
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                            <i class="fas fa-image nav-icon"></i>
-                            <p>Change Profile Photo</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{ route('userGetPassword') }}" class="nav-link">
-                            <i class="fas fa-lock nav-icon"></i>
-                            <p>Change Password</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">
-                                <i class="nav-icon fas fa-power-off"></i>
-                                <p>
-                                    Logout
-                                </p>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
-            </div>
-            <!-- /.sidebar -->
-        </aside>
+     @include("includes.sidebar")
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="min-height: 399px;">
@@ -237,12 +103,18 @@
     </div>
     <!-- ./wrapper -->
 
-    <script>
+    {{-- <script>
         ClassicEditor
             .create( document.querySelector( '#editor' ), {
                 // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
             } 
-    </script>
-    </body>
+    </script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha512-jCaU0Dp3IbMDlZ6f6dSEQSnOrSsugG6F6YigRWnagi7HoOLshF1kwxLT4+xCZRgQsTNqpUKj6WmWOxsu9l3URA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @stack("script")
+</body>
 
 </html>
+
+
+

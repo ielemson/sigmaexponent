@@ -80,22 +80,29 @@
         <div class="container custom-container-five">
             <div class="features-inner-wrap">
                 <div class="row">
-                    <div class="col-lg-6 col-sm-6">
+                    <div class="col-lg-12 col-sm-6">
                         <div class="features-item-five">
                             <div class="features-icon-five">
-                                <i class="flaticon-layers"></i>
+                                <i class="flaticon-business-presentation"></i>
                             </div>
                             <div class="features-content-five">
-                                <h2 class="title">Our Mission</h2>
+                                <h2 class="title">Why Choose Us</h2>
                                 <p style="text-align: justify">
-                                    Our mission is to catalyze growth and prosperity for our clients through strategic
-                                    investment solutions and unparalleled consulting services. We strive to foster enduring
-                                    relationships built on trust, integrity, and shared success.
+                                    <u style="font-style:bold; font-weight:800">Expertise</u>: Our team brings together diverse expertise across various sectors and
+                                    disciplines to deliver comprehensive solutions tailored to your needs. <br>
+                                    <u style="font-style:bold; font-weight:800">Innovation</u>: We embrace innovation and leverage cutting-edge technologies to stay
+                                    ahead
+                                    of market trends and deliver forward-thinking strategies. <br>
+                                    <u style="font-style:bold; font-weight:800">Integrity</u>: Integrity is at the core of everything we do. We prioritize
+                                    transparency, honesty,
+                                    and ethical conduct in all our interactions. <br>
+                                    <u style="font-style:bold; font-weight:800">Results-Oriented</u>: We are committed to delivering measurable results that exceed
+                                    expectations and drive sustainable growth for our clients.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-6">
+                    <div class="col-lg-12 col-sm-12">
                         <div class="features-item-five">
                             <div class="features-icon-five">
                                 <i class="flaticon-mission"></i>
@@ -113,28 +120,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-4">
+                    <div class="col-lg-6 col-sm-6">
                         <div class="features-item-five">
                             <div class="features-icon-five">
-                                <i class="flaticon-business-presentation"></i>
+                                <i class="flaticon-layers"></i>
                             </div>
                             <div class="features-content-five">
-                                <h2 class="title">Why Choose Us</h2>
+                                <h2 class="title">Our Mission</h2>
                                 <p style="text-align: justify">
-                                    <b>Expertise</b>: Our team brings together diverse expertise across various sectors and
-                                    disciplines to deliver comprehensive solutions tailored to your needs. <br>
-                                    <b>Innovation</b>: We embrace innovation and leverage cutting-edge technologies to stay
-                                    ahead
-                                    of market trends and deliver forward-thinking strategies. <br>
-                                    <b>Integrity</b>: Integrity is at the core of everything we do. We prioritize
-                                    transparency, honesty,
-                                    and ethical conduct in all our interactions. <br>
-                                    <b>Results-Oriented</b>: We are committed to delivering measurable results that exceed
-                                    expectations and drive sustainable growth for our clients.
+                                    Our mission is to catalyze growth and prosperity for our clients through strategic
+                                    investment solutions and unparalleled consulting services. We strive to foster enduring
+                                    relationships built on trust, integrity, and shared success.
                                 </p>
                             </div>
                         </div>
                     </div>
+                    
+                 
                     <div class="col-lg-6 col-sm-4">
                         <div class="features-item-five">
                             <div class="features-icon-five">
@@ -157,5 +159,60 @@
     </section>
     <!-- features-area-end -->
 
+            <!-- features-area -->
+            <section class="features-area-nine mt-40">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-7 col-lg-8">
+                            <div class="section-title-two text-center mb-40 z-index-1 position-relative tg-heading-subheading animation-style2">
+                                <h2 class="title tg-element-title">What We Do</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gutter-24 justify-content-center">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="features-item-six">
+                                <div class="features-item-six-top">
+                                    <div class="features-icon-six">
+                                        <i class="flaticon-investment"></i>
+                                    </div>
+                                    <h2 class="title"><a href="">Investment Services</a></h2>
+                                </div>
+                                <div class="features-content-six">
+                                    <p style="text-align: justify">
+                                We offer a comprehensive suite of investment services designed to maximize returns while 
+                                aligning with our clients' ﬁnancial goals and risk tolerance. From portfolio management to 
+                                asset allocation, our strategies are informed by rigorous analysis and a forward-thinking 
+                                approach to market dynamics. 
+                                    </p>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="features-item-six">
+                                <div class="features-item-six-top">
+                                    <div class="features-icon-six">
+                                        <i class="flaticon-round-table"></i>
+                                    </div>
+                                    <h2 class="title"><a href="#">Consulting Solutions</a></h2>
+                                </div>
+                                <div class="features-content-six">
+                                    <p style="text-align: justify">
+                                        Our consulting solutions are tailored to address the evolving needs of businesses and 
+individuals in today's complex economic landscape. Whether it's strategic planning, 
+market research, or operational optimization, we provide actionable recommendations 
+and hands-on support to drive sustainable growth and proﬁtability. 
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+              
+            </section>
+            <!-- features-area-end -->
     @include("includes.cta")
 @endsection

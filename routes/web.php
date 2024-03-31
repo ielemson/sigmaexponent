@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,8 @@ Route::get('/', 'FrontendController@index')->name('welcome');
 Route::get('/contact', 'FrontendController@contact')->name('contact');
 Route::get('/about', 'FrontendController@about')->name('about');
 Route::get('/our/service/{slug}', 'FrontendController@service')->name('frontend.service');
+Route::get('/blog', 'FrontendController@posts')->name('frontend.posts');
+Route::get('/blog/{slug}', 'FrontendController@post')->name('frontend.post');
 
 
 Route::group(['middleware' => 'auth'], function() {
@@ -43,6 +46,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/service/update/{id}', 'HomeController@update_service')->name('service.update');
 
     Route::post('/password/change', 'UserController@postPassword')->name('userPostPassword');
+    Route::resource('/home/blog', 'PostsController');
+    Route::resource('/blog/category', 'CategoryController');
+    // Route::resource('/blog', PostsController::class);
 });
 
 

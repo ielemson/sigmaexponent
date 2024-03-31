@@ -20,16 +20,18 @@
                                                 <i class="flaticon-phone-call"></i>
                                             </div>
                                             <div class="content">
-                                                <a href="tel:+18324066596">+1 832 406 6596 </a>
+                                                <a href="tel:+18324066596">+1(832)406-6596</a> <br>
+                                                <a href="tel:+2348167229055">(+234)816-722-9055</a>
+                                                 
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="icon">
+                                            {{-- <div class="icon">
                                                 <i class="flaticon-clock"></i>
                                             </div>
                                             <div class="content">
                                                 <p>Mon – Sat: 8 am – 5 pm</p>
-                                            </div>
+                                            </div> --}}
                                         </li>
                                     </ul>
                                 </div>
@@ -44,7 +46,7 @@
                                     <li><a href="{{ route("about") }}">Company</a></li>
                                     <li><a href="{{ route("contact") }}">Careers</a></li>
                                     {{-- <li><a href="{{ route("about") }}">Press media</a></li> --}}
-                                    <li><a href="#">Our Blog</a></li>
+                                    <li><a href="{{ route("frontend.posts") }}">Our Blog</a></li>
                                     {{-- <li><a href="contact.html">Privacy Policy</a></li> --}}
                                 </ul>
                             </div>
@@ -93,7 +95,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright-text-two text-center">
-                            <p>Copyright © SigmaExponent | All Right Reserved</p>
+                            <p>Copyright © {{ Date('Y') }} Sigma Exponent | All Right Reserved</p>
                         </div>
                     </div>
                 </div>

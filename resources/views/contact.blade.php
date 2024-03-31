@@ -16,13 +16,13 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="inner-contact-info">
-                        <h2 class="title">Our Office Address</h2>
+                        <h2 class="title">Our Mailing Address</h2>
                         <div class="contact-info-item">
-                            <h5 class="title-two">Head Office</h5>
+                            {{-- <h5 class="title-two">Head Office</h5> --}}
                             <ul class="list-wrap">
                                 <li> P.O Box 441564, Houston Texas, 77244</li>
-                                <li>+1 (832)406-6596</li>
-                                <li>(+234)816-722-9055</li>
+                                <li>+1(832)406-6596</li>
+                                <li>(+234)816-722-9055 </li>
                                 <li>info@sigmaexponent.com</li>
                             </ul>
                         </div>

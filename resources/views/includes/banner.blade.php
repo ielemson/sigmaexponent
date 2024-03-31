@@ -48,7 +48,7 @@
                                     <li class=""><a href="{{ route('about') }}">About Us</a>
                                        
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">What We Do</a>
+                                    <li class="menu-item-has-children"><a href="#">Our Services</a>
                                         <ul class="sub-menu">
                                           
                                             @if (count($services) > 0)
@@ -64,7 +64,7 @@
                                            
                                         </ul>
                                     </li>
-                                    <li><a href="#">Blog</a>
+                                    <li><a href="{{ route("frontend.posts") }}">Blog</a>
                                         
                                     </li>
                                     <li><a href="{{ route('contact') }}">Contacts</a></li>

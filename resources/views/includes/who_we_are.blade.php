@@ -3,11 +3,11 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 col-md-9">
                 <div class="about-img-wrap-three">
-                    <img src="assets/img/banner/consult.jpg" alt="" data-aos="fade-down-right" data-aos-delay="0">
-                    {{-- <img src="assets/img/images/h2_about_img02.jpg" alt="" data-aos="fade-left" data-aos-delay="400"> --}}
+                    <img src="{{ asset("assets/img/banner/consult.jpg") }}" alt="" data-aos="fade-down-right" data-aos-delay="0">
+                    <img src="assets/img/images/consult.jpg" alt="" data-aos="fade-left" data-aos-delay="400">
                     <div class="experience-wrap" data-aos="fade-up" data-aos-delay="300">
-                        <h2 class="title">25 <span>Years</span></h2>
-                        <p>Of Experience in This Finance Advisory Company.</p>
+                        {{-- <h2 class="title">25 <span>Years</span></h2> --}}
+                        <p>High Depth of Experience Resources</p>
                     </div>
                 </div>
             </div>
