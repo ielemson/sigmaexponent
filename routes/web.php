@@ -24,7 +24,8 @@ Route::get('/about', 'FrontendController@about')->name('about');
 Route::get('/our/service/{slug}', 'FrontendController@service')->name('frontend.service');
 Route::get('/blog', 'FrontendController@posts')->name('frontend.posts');
 Route::get('/blog/{slug}', 'FrontendController@post')->name('frontend.post');
-
+Route::get('/clear-cache', 'FrontendController@clearWebsiteCache');
+// Route::get('/clear-cache', [HomeController::class, 'clearWebsiteCache']);
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

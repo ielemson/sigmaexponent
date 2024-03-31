@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Service;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Http\Request;
+
+use function Ramsey\Uuid\v1;
 
 class FrontendController extends Controller
 {
@@ -61,4 +64,12 @@ class FrontendController extends Controller
         $services = Service::all();
         return view("blog",compact("blog","services",'blogs','categories'));
     }
+
+    public function clearWebsiteCache()
+    {
+        Artisan::call('cache:clear');
+        $services = Service::all();
+        return view('welcome',compact("services"));
+    }
+   
 }
