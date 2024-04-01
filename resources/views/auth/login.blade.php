@@ -64,8 +64,11 @@
                     </div>
                     <div class="row">
                        
+                        <div class="col-6" element-id="24">
+                            <a href="{{ url("/") }}" class="btn btn-info btn-block">Go Home</a>
+                            </div>
 
-                        <div class="col-12">
+                        <div class="col-6">
                             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                         </div>
 

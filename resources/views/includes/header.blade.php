@@ -41,6 +41,33 @@
                                      </li>
                                      <li><a href="{{ route("frontend.posts") }}">Blog</a></li>
                                      <li><a href="{{ route("contact") }}">contacts</a></li>
+                                     
+                                     
+                                            @auth
+                                            <li><a href="">Login</a>
+                                                <ul class="sub-menu">
+                                        <li><a href="{{ route('home') }}">Home</a></li>
+                                        <li>
+                                            <a class="nav-link" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();
+                                            ">
+
+                                                    Logout
+                                               
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                    @else
+                                        <li><a href="{{ route('login') }}">Login</a></li>
+                                    @endauth
+                                      
+                                 
+                                    
                                  </ul>
                              </div>
                              <div class="header-action header-action-five d-none d-md-block">
