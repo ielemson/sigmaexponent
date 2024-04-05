@@ -8,7 +8,7 @@
                      <div class="header-top-left">
                          <ul class="list-wrap">
                              <li><i class="flaticon-location"></i>P.O Box 441564, Houston Texas, 77244</li>
-                             <li><i class="flaticon-mail"></i><a href="mailto:info@sigmaexponent.Com">Info@Sigmaexponent.Com</a></li>
+                             <li><i class="flaticon-mail"></i><a href="mailto:info@sigmaexponent.com">info@sigmaexponent.Com</a></li>
                          </ul>
                      </div>
                  </div>
@@ -48,8 +48,8 @@
                                     <li class=""><a href="{{ route('about') }}">About Us</a>
                                        
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">Our Services</a>
-                                        <ul class="sub-menu">
+                                    <li ><a href="{{ route("Ourservices") }}">Our Services</a>
+                                        {{-- <ul class="sub-menu">
                                           
                                             @if (count($services) > 0)
                                             @foreach ($services as $service)
@@ -62,7 +62,7 @@
                                          @endif
                                            
                                            
-                                        </ul>
+                                        </ul> --}}
                                     </li>
                                     <li><a href="{{ route("frontend.posts") }}">Blog</a>
                                         

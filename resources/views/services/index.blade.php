@@ -13,7 +13,7 @@ Service List
                 @foreach ($services as $service)
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="card shadow">
-                        {{-- <img src="https://drive.google.com/uc?export=view&id=1aj_vT5zjJlkdEQ_VcCsdnvpVBi-Fjwyb" class="card-img-top" alt="..."> --}}
+                        <img src="{{ asset("assets/images/services/$service->img") }}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h2 class="card-title">{{ $service->title }}</h2>
                             <p class="card-text">

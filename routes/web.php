@@ -25,6 +25,7 @@ Route::get('/our/service/{slug}', 'FrontendController@service')->name('frontend.
 Route::get('/blog', 'FrontendController@posts')->name('frontend.posts');
 Route::get('/blog/{slug}', 'FrontendController@post')->name('frontend.post');
 Route::get('/clear-cache', 'FrontendController@clearWebsiteCache');
+Route::get('/our-services', 'FrontendController@Ourservices')->name("Ourservices");
 // Route::get('/clear-cache', [HomeController::class, 'clearWebsiteCache']);
 
 Route::group(['middleware' => 'auth'], function() {
@@ -36,7 +37,6 @@ Route::group(['middleware' => 'auth'], function() {
 
 
     Route::get('/profile', 'UserController@profile')->name('user.profile');
-
     Route::post('/profile', 'UserController@postProfile')->name('user.postProfile');
 
     Route::get('/password/change', 'UserController@getPassword')->name('userGetPassword');

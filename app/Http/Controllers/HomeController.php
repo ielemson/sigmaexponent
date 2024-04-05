@@ -39,16 +39,16 @@ class HomeController extends Controller
     public function store_service(Request $request){
         // return $request;
         try {
-            // $imageName = time().'.'.$request->image->extension();  
+            $imageName = time().'.'.$request->img->extension();  
      
-            // $request->image->move(public_path('assets/images/services'), $imageName);
+            $request->img->move(public_path('assets/images/services'), $imageName);
 
             $service = Service::create([
                 'title' => $request->title,
                 'content' => $request->content,
                 'status' => $request->status,
-                'slug'=> Str::slug($request->input('title'))
-                // 'image' => $imageName,
+                'slug'=> Str::slug($request->input('title')),
+                'img' => $imageName,
                ]);
 
             
@@ -77,21 +77,26 @@ class HomeController extends Controller
         $service = Service::where("id",$id)->first();
 
         try {
-            // $imageName = time().'.'.$request->image->extension();  
+            $imageName = time().'.'.$request->img->extension();  
      
-            // $request->image->move(public_path('assets/images/services'), $imageName);
-
-            // $service = Service::create([
-            //     'title' => $request->title,
-            //     'content' => $request->content,
-            //     'status' => $request->status,
-            //     // 'image' => $imageName,
-            //    ]);
+            $request->img->move(public_path('assets/images/services'), $imageName);
+            // $service->title = $request->title;
+            // $service->content = $request->content;
+            // $service->status = $request->status;
+            // $service->slug = 
+            // // $service = Service::create([
+            // //     'title' => $request->title,
+            // //     'content' => $request->content,
+            // //     'status' => $request->status,
+            // //     'slug'=> Str::slug($request->input('title')),
+            // //     'img' => $imageName,
+            // //    ]);
 
                 $service->title = $request->title;
                 $service->status = $request->status;
                 $service->content = $request->content;
                 $service->slug = Str::slug($request->input('title'));
+                $service->img = $imageName;
             
             if ($service->save()) {
                 return redirect()->back()->with('success', 'Service updated!');

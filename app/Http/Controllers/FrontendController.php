@@ -42,26 +42,26 @@ class FrontendController extends Controller
      */
     public function about()
     {
-        $services = Service::all();
+        $services = Service::where("status",1)->get();
         return view('about',compact('services'));
     }
 
     public function service($slug){
         $service = Service::where("slug",$slug)->first();
-        $services = Service::all();
+        $services = Service::where("status",1)->get();
         return view('frontend_service',compact("service","services"));
     }
 
     public function posts(){
         $blogs = Post::where("status",1)->paginate(12);
-        $services = Service::all();
+        $services = Service::where("status",1)->get();
         return view("blogs",compact("blogs","services"));
     }
     public function post($slug){
         $blog = Post::where("slug",$slug)->first();
         $blogs = Post::where("status",1)->latest();
         $categories = Category::where("status",1)->get();
-        $services = Service::all();
+        $services = Service::where("status",1)->get();
         return view("blog",compact("blog","services",'blogs','categories'));
     }
 
@@ -69,6 +69,12 @@ class FrontendController extends Controller
     {
         Artisan::call('cache:clear');
         return "Cache Cleared";
+    }
+
+    public function Ourservices(){
+    
+        $services = Service::where("status",1)->get();
+        return view("services",compact("services"));
     }
    
 }

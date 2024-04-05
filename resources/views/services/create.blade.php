@@ -13,7 +13,7 @@ Create Service
         <div class="card-body">
             <div>
                 <div>
-                    <form class="form-horizontal" method="POST" action="{{ route('services.store') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('services.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -42,7 +42,17 @@ Create Service
                                         @enderror
                                     </div>
                                 </div>
-                         
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="img">Image</label>
+                                        <input type="file" name="img"  id="img" class="form-control @error('img') is-invalid @enderror" value="{{ old('title') }}" required placeholder="Service Title">
+                                        @error('img')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
                             <div class="col-md-12">
 
                                 <div class="form-group">

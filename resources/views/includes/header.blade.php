@@ -26,18 +26,8 @@
                                      <li ><a href="{{ route("about") }}">About Us</a>
                                         
                                      </li>
-                                     <li class="menu-item-has-children"><a href="#">Our Services</a>
-                                         <ul class="sub-menu">
-                                            @if (count($services) > 0)
-                                            @foreach ($services as $service)
-                                            <li><a href="{{ route("frontend.service",$service->slug) }}">
-                                              {{ $service->title }}
-                                              </a>
-                                          </li>
+                                     <li ><a href="{{ route("Ourservices") }}">Our Services</a>
                                          
-                                            @endforeach 
-                                         @endif
-                                         </ul>
                                      </li>
                                      <li><a href="{{ route("frontend.posts") }}">Blog</a></li>
                                      <li><a href="{{ route("contact") }}">contacts</a></li>
