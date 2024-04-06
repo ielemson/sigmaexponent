@@ -46,7 +46,7 @@
                             <div class="services-cat-list mb-30">
                                 <ul class="list-wrap">
                                     @foreach ($services as $main)
-                                    <li class="{{ $service->id == $main->id ? 'active':'' }}"><a href="{{ route("frontend.service",$service->slug) }}">{{ $main->title }}<i class="flaticon-right-arrow"></i></a></li>
+                                    <li class="{{ $service->id == $main->id ? 'active':'' }}"><a href="{{ route("frontend.service",$main->slug) }}">{{ $main->title }}<i class="flaticon-right-arrow"></i></a></li>
                                     @endforeach
                                    
                                 </ul>
