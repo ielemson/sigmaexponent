@@ -35,7 +35,7 @@
                             <div class="services-details-content">
                                 <h2 class="title">{{ $service->title }}</h2>
                                 <p>
-                                    {{ $service->content }}
+                                    {!! $service->content !!}
                                 </p>
                               
                             </div>
