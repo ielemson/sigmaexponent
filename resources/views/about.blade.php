@@ -1,5 +1,10 @@
+@php
+    $setting = \App\Models\Setting::find(1);
+@endphp
 @extends('layouts.app')
-
+@section("title")
+&NotVerticalBar; About
+@endsection
 @section('content')
      <!-- breadcrumb-area -->
    @include("includes.breadcrumb",["header_1"=>"About",'header_2'=>"About Us","img"=>"assets/img/bg/about.jpg"])

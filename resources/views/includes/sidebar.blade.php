@@ -93,21 +93,7 @@
                        
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('user.profile') }}" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
-                        <p>
-                            Profile
-                        </p>
-                    </a>
-                </li>
-                {{-- <li class="nav-item">
-                    <a href="#" class="nav-link">
-                    <i class="fas fa-bell nav-icon"></i>
-                    <p>Notifications</p>
-                    </a>
-                </li> --}}
-
+               
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link {{ request()->is('service/*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-cogs"></i>
@@ -135,17 +121,52 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                    <i class="fas fa-image nav-icon"></i>
-                    <p>Change Profile Photo</p>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link {{ request()->is('setting/*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Settings
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="fas fa-image nav-icon"></i>
+                            <p>Change Profile Photo</p>
+                            </a>
+                        </li>
+        
+                        <li class="nav-item">
+                            <a href="{{ route('userGetPassword') }}" class="nav-link">
+                            <i class="fas fa-lock nav-icon"></i>
+                            <p>Change Password</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route("website-setting.edit") }}" class="nav-link">
+                            <i class="fas fa-lock nav-icon"></i>
+                            <p>Update Settings</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
                 </li>
 
+                
                 <li class="nav-item">
-                    <a href="{{ route('userGetPassword') }}" class="nav-link">
-                    <i class="fas fa-lock nav-icon"></i>
-                    <p>Change Password</p>
+                    <a href="{{ route('user.profile') }}" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Profile
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route("newsletter") }}" class="nav-link">
+                    <i class="fas fa-envelope nav-icon"></i>
+                    <p>NewsLetter</p>
                     </a>
                 </li>
 

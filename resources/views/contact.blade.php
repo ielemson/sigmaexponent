@@ -1,5 +1,11 @@
-@extends('layouts.app')
 
+@php
+    $setting = \App\Models\Setting::find(1);
+@endphp
+@extends('layouts.app')
+@section("title")
+&NotVerticalBar; Contact Us
+@endsection
 @section('content')
     <!-- breadcrumb-area -->
     @include("includes.breadcrumb",["header_1"=>"Contact",'header_2'=>"Contact Us","img"=>"assets/img/bg/contact.jpg"])
@@ -20,10 +26,10 @@
                         <div class="contact-info-item">
                             {{-- <h5 class="title-two">Head Office</h5> --}}
                             <ul class="list-wrap">
-                                <li> P.O Box 441564, Houston Texas, 77244</li>
-                                <li>+1(832)406-6596</li>
-                                <li>(+234)816-722-9055 </li>
-                                <li>info@sigmaexponent.com</li>
+                                <li>{{ $setting->address }}</li>
+                                <li>{{ $setting->hotline }}</li>
+                                <li>{{ $setting->phone }}</li>
+                                <li>{{ $setting->email }}</li>
                             </ul>
                         </div>
                         {{-- <div class="contact-info-item">

@@ -1,12 +1,18 @@
+@php
+    $setting = \App\Models\Setting::find(1);
+@endphp
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Sigma Exponent LLC</title>
-        <meta name="description" content="Sigmaexponent-Consulting Services, Investment Services">
+        <title>{{ $setting->website_title }} @yield('title')</title>
+        <meta name="description" content="{{ $setting->meta_description }}">
+        <meta name="title" content="{{ $setting->meta_title }}">
+        <meta name="keywords" content="{{ $setting->meta_tag }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="shortcut icon" type="image/x-icon" href="{{ asset("assets/img/favicon.png") }}">
         <!-- Place favicon.ico in the root directory -->
 
@@ -24,9 +30,17 @@
         <link rel="stylesheet" href="{{ asset("assets/css/default.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/css/responsive.css") }}">
+        <link rel="stylesheet" href="{{ asset("alertifyjs/css/alertify.min.css") }}">
+        <link rel="stylesheet" href="{{ asset("alertifyjs/css/themes/default.min.css") }}">
+        <link rel="stylesheet" href="{{ asset("alertifyjs/css/themes/bootstrap.min.css") }}">
+        <style>
+            #email-error{
+                font-size: 0.8rem;
+                color: red;
+                      }
+        </style>
     </head>
     <body>
-
 
         <!-- preloader -->
         <div id="preloader">
@@ -49,7 +63,6 @@
        @include('includes.header')
         <!-- header-area-end -->
 
-
         <!-- main-area -->
         <main class="fix">
 
@@ -62,9 +75,9 @@
        @include('includes.footer')
         <!-- footer-area-end -->
 
-
         <!-- JS here -->
         <script src="{{ asset("assets/js/vendor/jquery-3.6.0.min.js") }}"></script>
+        <script src="{{ asset("assets/js/jquery-validate-1.9.0.min.js") }}"></script>
         <script src="{{ asset("assets/js/bootstrap.min.js") }}"></script>
         <script src="{{ asset("assets/js/jquery.magnific-popup.min.js") }}"></script>
         <script src="{{ asset("assets/js/jquery.odometer.min.js") }}"></script>
@@ -84,6 +97,64 @@
         <script src="{{ asset("assets/js/aos.js") }}"></script>
         <script src="{{ asset("assets/js/wow.min.js") }}"></script>
         <script src="{{ asset("assets/js/main.js") }}"></script>
+        <script src="{{ asset("alertifyjs/alertify.min.js") }}"></script>
+        <script>
+            if ($("#ajax-newsletter-form").length > 0) {
+            $("#ajax-newsletter-form").validate({
+              rules: {
+               
+              email: {
+                required: true,
+                maxlength: 50,
+                email: true,
+              },
+                
+              },
+              messages: {
+             
+              email: {
+                required: "Please enter valid email",
+                email: "Please enter valid email",
+              },
+             
+              },
+              submitHandler: function(form) {
+              $.ajaxSetup({
+                headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+              });
+            
+            //   $('#submit').html('Please Wait...');
+            //   $("#submit"). attr("disabled", true);
+            
+              $.ajax({
+                url: "{{url('newsletter/subscription')}}",
+                type: "POST",
+                data: $('#ajax-newsletter-form').serialize(),
+                success: function( response ) {
+        
+                  document.getElementById("ajax-newsletter-form").reset(); 
+
+                if(response.data == true){
+                    alertify.alert('Success', 'Thank you for subscribing.','success');
+                }
+                
+                if (response.data == false) {
+                    alertify.alert('Error','Error, please try again!');
+
+                }
+                if (response.data === "exist") {
+                    alertify.alert('Error','Email already exist in our database');
+
+                }
+                }
+               });
+              }
+              })
+            }
+            </script>
+      
     </body>
 
 </html>

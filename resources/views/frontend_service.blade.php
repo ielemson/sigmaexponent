@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section("title")
+&NotVerticalBar; Our Services
+@endsection
 @section('content')
      <!-- breadcrumb-area -->
    @include("includes.breadcrumb",["header_1"=>"Our Service",'header_2'=>"$service->title"])

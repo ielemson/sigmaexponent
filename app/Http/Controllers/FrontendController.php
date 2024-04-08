@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Newsletter;
 use App\Models\Post;
 use App\Models\Service;
 use Illuminate\Support\Facades\Artisan;
@@ -75,6 +76,26 @@ class FrontendController extends Controller
     
         $services = Service::where("status",1)->get();
         return view("services",compact("services"));
+    }
+
+    public function newsletter(Request $request){
+        // return response(["data"=>$request->all()]);
+        $check = Newsletter::where("email",$request->email)->count();
+
+        if($check > 0){
+        return response(['data'=>"exist"]);
+        }
+
+        $post = Newsletter::create([
+            'email' => $request->input('email')
+        ]);
+
+        if ($post) {
+            
+            return response(['data'=>true]);
+        }else{
+            return response(["data"=>false]);
+        }
     }
    
 }

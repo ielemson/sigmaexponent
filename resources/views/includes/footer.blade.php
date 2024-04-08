@@ -20,8 +20,8 @@
                                                 <i class="flaticon-phone-call"></i>
                                             </div>
                                             <div class="content">
-                                                <a href="tel:+18324066596">+1(832)406-6596</a> <br>
-                                                <a href="tel:+2348167229055">(+234)816-722-9055</a>
+                                                <a href="tel:{{ $setting->hotline }}">{{ $setting->hotline }}</a> <br>
+                                                <a href="tel:{{ $setting->phone }}">{{ $setting->phone }}</a>
                                                  
                                             </div>
                                         </li>
@@ -57,7 +57,7 @@
                             <h4 class="fw-title">Quick Links</h4>
                             <div class="footer-link">
                                 <ul class="list-wrap">
-                                    <li><a href="{{ route("contact") }}">How it’s Work</a></li>
+                                    <li><a href="{{ route("contact") }}">How it Works</a></li>
                                     <li><a href="{{ route("about") }}">Partners</a></li>
                                     <li><a href="{{ route("contact") }}">Testimonials</a></li>
                                     {{-- <li><a href="contact.html">Case Studies</a></li> --}}
@@ -70,15 +70,15 @@
                         <div class="footer-widget">
                             <h4 class="fw-title">Our Newsletter</h4>
                             <div class="footer-newsletter">
-                                <p>Sign up to Privitar’s weekly newsletter to get the latest updates.</p>
-                                <form action="#">
-                                    <input type="email" placeholder="enter your e-mail">
+                                <p>Sign up to our weekly newsletter for latest updates.</p>
+                                <form  id="ajax-newsletter-form" method="post">
+                                    <input type="email" placeholder="enter your e-mail" name="email" id="email" required>
                                     <button type="submit">Subscribe</button>
                                 </form>
                                 <div class="footer-social footer-social-two">
                                     <ul class="list-wrap">
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="{{ $setting->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="{{ $setting->twitter }}"><i class="fab fa-twitter"></i></a></li>
                                         {{-- <li><a href="#"><i class="fab fa-instagram"></i></a></li> --}}
                                         {{-- <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li> --}}
                                         {{-- <li><a href="#"><i class="fab fa-youtube"></i></a></li> --}}

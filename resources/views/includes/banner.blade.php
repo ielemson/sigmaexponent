@@ -1,4 +1,5 @@
  <!-- header-area -->
+
  <div id="header-fixed-height"></div>
  <header class="header-style-six">
      <div class="heder-top-wrap">
@@ -7,22 +8,22 @@
                  <div class="col-lg-7">
                      <div class="header-top-left">
                          <ul class="list-wrap">
-                             <li><i class="flaticon-location"></i>P.O Box 441564, Houston Texas, 77244</li>
-                             <li><i class="flaticon-mail"></i><a href="mailto:info@sigmaexponent.com">info@sigmaexponent.Com</a></li>
+                             <li><i class="flaticon-location"></i>{{ $setting->address }}</li>
+                             <li><i class="flaticon-mail"></i><a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a></li>
                          </ul>
                      </div>
                  </div>
                  <div class="col-lg-5">
                      <div class="header-top-right">
                          <div class="header-contact">
-                             <a href="tel:+1 8324066596"><i class="flaticon-phone-call"></i>+1 832 406 6596</a>
+                             <a href="tel:+1 8324066596"><i class="flaticon-phone-call"></i>{{ $setting->hotline }}</a>
                          </div>
                          <div class="header-social">
                              <ul class="list-wrap">
-                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                 <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                 <li><a href="{{ $setting->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                                 <li><a href="{{ $setting->twitter }}"><i class="fab fa-twitter"></i></a></li>
+                                 {{-- <li><a href="#"><i class="fab fa-instagram"></i></a></li> --}}
+                                 {{-- <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li> --}}
                              </ul>
                          </div>
                      </div>
@@ -38,7 +39,7 @@
                      <div class="menu-wrap">
                          <nav class="menu-nav">
                              <div class="logo">
-                                 <a href="index.html"><img src="{{ asset("assets/img/logo/logo.png") }}" alt="Logo"></a>
+                                 <a href="{{ url("/") }}"><img src="{{ asset("assets/img/logo/logo.png") }}" alt="Logo"></a>
                              </div>
                              <div class="navbar-wrap main-menu d-none d-lg-flex">
                                 <ul class="navigation">
@@ -68,19 +69,15 @@
                                         
                                     </li>
                                     <li><a href="{{ route('contact') }}">Contacts</a></li>
-                                    
                                     @auth
-                                    <li><a href="">Login</a>
+                                    <li><a href="#">User</a>
                                         <ul class="sub-menu">
                                 <li><a href="{{ route('home') }}">Home</a></li>
                                 <li>
                                     <a  href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();
-                                    ">
-
+                                    document.getElementById('logout-form').submit();">
                                             Logout
-                                       
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
@@ -120,11 +117,11 @@
                              </div>
                              <div class="social-links">
                                  <ul class="clearfix list-wrap">
-                                     <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                     <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                     <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                     <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                     <li><a href="{{ $setting->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                                     <li><a href="{{ $setting->twitter }}"><i class="fab fa-twitter"></i></a></li>
+                                     {{-- <li><a href="#"><i class="fab fa-instagram"></i></a></li> --}}
+                                     {{-- <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li> --}}
+                                     {{-- <li><a href="#"><i class="fab fa-youtube"></i></a></li> --}}
                                  </ul>
                              </div>
                          </nav>

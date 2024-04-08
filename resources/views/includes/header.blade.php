@@ -16,7 +16,7 @@
                                  </a>
                              </div>
                              <div class="logo">
-                                 <a href="{{ url("/") }}"><img src="{{ asset("assets/img/logo/logo.png") }}" alt="logo"></a>
+                                 <a href="{{ url("/") }}"><img src="{{ asset("images/settings/$setting->website_logo_dark") }}" alt="{{ $setting->website_title }}"></a>
                              </div>
                              <div class="navbar-wrap main-menu d-none d-lg-flex">
                                  <ul class="navigation">
@@ -34,14 +34,13 @@
                                      
                                      
                                             @auth
-                                            <li><a href="">Login</a>
+                                            <li><a href="">User</a>
                                                 <ul class="sub-menu">
                                         <li><a href="{{ route('home') }}">Home</a></li>
                                         <li>
                                             <a class="nav-link" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();
-                                            ">
+                                            document.getElementById('logout-form').submit(); ">
 
                                                     Logout
                                                
@@ -124,21 +123,21 @@
              <button><i class="far fa-window-close"></i></button>
          </div>
          <div class="logo-side mb-30">
-             <a href="{{ url("/") }}"><img src="{{ asset("assets/img/logo/logo.png") }}" alt="logo"></a>
+             <a href="{{ url("/") }}"><img src="{{ asset("images/settings/$setting->website_logo_dark") }}" alt="{{ $setting->website_title }}"></a>
          </div>
          <div class="side-info mb-30">
              <div class="contact-list mb-30">
                  <h4>Office Address</h4>
-                 <p>P.O Box 441564, Houston Texas, 77244</p>
+                 <p>{{ $setting->address }}</p>
              </div>
              <div class="contact-list mb-30">
                  <h4>Phone Number</h4>
-                 <p>+1 832 406 6596 </p>
-                 <p>+234 816 722 9055</p>
+                 <p>{{ $setting->hotline }} </p>
+                 <p>{{ $setting->phone }}</p>
              </div>
              <div class="contact-list mb-30">
                  <h4>Email Address</h4>
-                 <p>info@sigmaexponent.com</p>
+                 <p>{{ $setting->email }}</p>
              </div>
          </div>
        

@@ -17,7 +17,8 @@ Service List
                         <div class="card-body">
                             <h2 class="card-title">{{ $service->title }}</h2>
                             <p class="card-text">
-                            {{ $service->content }}    
+                            {{-- {{ $service->content }} --}}
+                            {!! Illuminate\Support\Str::limit($service->content, 50) !!}
                             </p>
                         </div>
                         <div class="card-body card-p">
@@ -29,7 +30,7 @@ Service List
                                     <i class="fas fa-edit"></i>
                                     Edit
                                 </a>
-                                <a href="" class="col col-xs-4">
+                                <a href="{{ route('service.delete', $service->id) }}" class="col col-xs-4">
                                     <i class="fas fa-trash danger"></i> 
                                     Delete
                                 </a>

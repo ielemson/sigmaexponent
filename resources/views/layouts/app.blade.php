@@ -1,12 +1,15 @@
+@php
+    $setting = \App\Models\Setting::find(1);
+@endphp
 <!doctype html>
 <html class="no-js" lang="en">
-    
-
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Sigma Exponent LLC</title>
-        <meta name="description" content="Sigmaexponent-consulting services, investment services">
+        <title>{{ $setting->website_title }} @yield('title')</title>
+        <meta name="description" content="{{ $setting->meta_description }}">
+        <meta name="title" content="{{ $setting->meta_title }}">
+        <meta name="keywords" content="{{ $setting->meta_tag }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="shortcut icon" type="image/x-icon" href="{{ asset("assets/img/favicon.png") }}">
@@ -27,6 +30,7 @@
         <link rel="stylesheet" href="{{ asset("assets/css/default.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
         <link rel="stylesheet" href="{{ asset("assets/css/responsive.css") }}">
+       
         
     </head>
 
@@ -91,6 +95,8 @@
         <script src="{{ asset("assets/js/aos.js") }}"></script>
         <script src="{{ asset("assets/js/wow.min.js") }}"></script>
         <script src="{{ asset("assets/js/main.js") }}"></script>
+     
+       
     </body>
 
 </html>

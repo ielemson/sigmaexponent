@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Newsletter;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Exports\EmailExport;
+use Maatwebsite\Excel\Facades\Excel;
+use PhpParser\Node\Expr\New_;
+
 class HomeController extends Controller
 {
     /**
@@ -71,26 +76,15 @@ class HomeController extends Controller
         return view("services.edit",compact("service"));
     }
 
-
     
     public function update_service(Request $request, $id){
+        
         $service = Service::where("id",$id)->first();
 
         try {
             $imageName = time().'.'.$request->img->extension();  
      
             $request->img->move(public_path('assets/images/services'), $imageName);
-            // $service->title = $request->title;
-            // $service->content = $request->content;
-            // $service->status = $request->status;
-            // $service->slug = 
-            // // $service = Service::create([
-            // //     'title' => $request->title,
-            // //     'content' => $request->content,
-            // //     'status' => $request->status,
-            // //     'slug'=> Str::slug($request->input('title')),
-            // //     'img' => $imageName,
-            // //    ]);
 
                 $service->title = $request->title;
                 $service->status = $request->status;
@@ -108,5 +102,29 @@ class HomeController extends Controller
 
             return redirect()->back()->with('error', $bug);
         }
+    }
+
+        public function service_delete($id){
+             Service::where("id",$id)->delete();
+            return redirect()->back()->with('success','Service removed successfully');
+    }
+
+    public function newsletter(){
+        $newsletters = Newsletter::paginate(10);
+        return view('newsletter.newsletter',compact("newsletters"));
+    }
+
+    public function get_email_data()
+    {
+        return Excel::download(new EmailExport, 'newsletters.xlsx');
+    }
+
+    public function newsletter_delete($id){
+
+        if (Newsletter::where("id",$id)->delete()) {
+            
+            return redirect()->back()->with("success","Email deleted");
+        }
+
     }
 }

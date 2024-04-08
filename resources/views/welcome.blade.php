@@ -1,51 +1,11 @@
 @extends('layouts.master')
-
+@section("title")
+&NotVerticalBar; Home
+@endsection
 @section('content')
     <!-- banner-area -->
     @include('includes.home_banner')
-    <!-- banner-area-end -->
-    <!-- features-area -->
-    {{-- <section class="features-area-two pt-80">
-<div class="container">
-<div class="features-item-wrap">
-<div class="row justify-content-center">
-<div class="col-lg-4 col-md-6 col-sm-6">
-<div class="features-item-two">
-<div class="features-icon-two">
-<i class="flaticon-profit"></i>
-</div>
-<div class="features-content-two">
-<h4 class="title">Growing Business</h4>
-<p>Finance helps you to convert into a strategic asset get.</p>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6 col-sm-6">
-<div class="features-item-two">
-<div class="features-icon-two">
-<i class="flaticon-investment"></i>
-</div>
-<div class="features-content-two">
-<h4 class="title">Finance Investment</h4>
-<p>Finance helps you to convert into a strategic asset get.</p>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6 col-sm-6">
-<div class="features-item-two">
-<div class="features-icon-two">
-<i class="flaticon-taxes"></i>
-</div>
-<div class="features-content-two">
-<h4 class="title">Tax Advisory</h4>
-<p>Finance helps you to convert into a strategic asset get.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section> --}}
+    
     <!-- features-area-end -->
 
     <!-- about-area -->
