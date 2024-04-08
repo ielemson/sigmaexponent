@@ -49,7 +49,7 @@
                                     <li class=""><a href="{{ route('about') }}">About Us</a>
                                        
                                     </li>
-                                    <li ><a href="{{ route("Ourservices") }}">Our Services</a>
+                                    <li ><a href="{{ route("Ourservices") }}">Services</a>
                                         {{-- <ul class="sub-menu">
                                           
                                             @if (count($services) > 0)

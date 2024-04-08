@@ -26,7 +26,7 @@
                                      <li ><a href="{{ route("about") }}">About Us</a>
                                         
                                      </li>
-                                     <li ><a href="{{ route("Ourservices") }}">Our Services</a>
+                                     <li ><a href="{{ route("Ourservices") }}">Services</a>
                                          
                                      </li>
                                      <li><a href="{{ route("frontend.posts") }}">Blog</a></li>
